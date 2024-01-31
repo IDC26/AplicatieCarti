@@ -5,21 +5,32 @@
     </div>
 
     <!-- Formular pentru introducerea manuală a datelor -->
-    <div class="p-3">
-      <label for="author">Autor:</label>
-      <UInput v-model="newRecord.author" id="author" />
+    <!-- Formular pentru introducerea manuală a datelor -->
+    <div class="flex px-3 py-3.5 border-b border-gray-200 dark:border-gray-700">
+      <div class="mb-3">
+        <label for="author">Autor:</label>
+        <UInput v-model="newRecord.author" id="author" />
+      </div>
 
-      <label for="book">Titlu carte:</label>
-      <UInput v-model="newRecord.book" id="book" />
+      <div class="mb-3">
+        <label for="book">Titlu carte:</label>
+        <UInput v-model="newRecord.book" id="book" />
+      </div>
 
-      <label for="language">Scris in limba:</label>
-      <UInput v-model="newRecord.language" id="language" />
+      <div class="mb-3">
+        <label for="language">Scris in limba:</label>
+        <UInput v-model="newRecord.language" id="language" />
+      </div>
 
-      <label for="published">Publicat in anul:</label>
-      <UInput v-model="newRecord.published" type="number" id="published" />
+      <div class="mb-3">
+        <label for="published">Publicat in anul:</label>
+        <UInput v-model="newRecord.published" type="number" id="published" />
+      </div>
 
-      <label for="sales">Vanzari:</label>
-      <UInput v-model="newRecord.sales" type="number" id="sales" />
+      <div class="mb-3">
+        <label for="sales">Vanzari:</label>
+        <UInput v-model="newRecord.sales" type="number" id="sales" />
+      </div>
 
       <button @click="addNewRecord" class="bg-blue-500 text-white px-4 py-2 rounded mt-3">
         Adauga Carte Noua
