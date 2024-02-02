@@ -32,9 +32,7 @@
         <UInput v-model="newRecord.sales" type="number" id="sales" />
       </div>
 
-      <button @click="addNewRecord" class="bg-blue-500 text-white px-4 py-2 rounded mt-3">
-        Adauga Carte Noua
-      </button>
+      <UButton @click="addNewRecord" label="Adauga Carte"/>
     </div>
 
     <UTable :rows="rows" :columns="columns"></UTable>
