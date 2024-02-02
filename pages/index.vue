@@ -59,7 +59,7 @@ const { data: carti, pending } = useLazyAsyncData<any[]>('carti', async () => {
     const collection = mongo.db('Carti').collection('CartiSuperbe');
     const results = await collection.find();
     return results.map((result, index) => ({
-      nrCrt: index + 1,
+      _id: index+1,
       author: result.author,
       book: result.book,
       language: result.language,
@@ -76,9 +76,9 @@ const { data: carti, pending } = useLazyAsyncData<any[]>('carti', async () => {
 
 const columns = [
   {
-    key: 'nrCrt',
+    key: '_id',
     label: 'Nr.Crt',
-    sortable: true,
+    sortable: false,
   },
   {
     key: 'book',
