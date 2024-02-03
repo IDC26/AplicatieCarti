@@ -1,48 +1,3 @@
-<template>
-  <div>
-    <div class="flex px-3 py-3.5 border-b border-gray-200 dark:border-gray-700">
-      <UInput v-model="q" placeholder="Filtreaza carti" />
-    </div>
-
-    <!-- Formular pentru introducerea manuală a datelor -->
-    <!-- Formular pentru introducerea manuală a datelor -->
-    <div class="flex px-3 py-3.5 border-b border-gray-200 dark:border-gray-700">
-      <div class="mb-3">
-        <label for="author">Autor:</label>
-        <UInput v-model="newRecord.author" id="author" />
-      </div>
-
-      <div class="mb-3">
-        <label for="book">Titlu carte:</label>
-        <UInput v-model="newRecord.book" id="book" />
-      </div>
-
-      <div class="mb-3">
-        <label for="language">Scris in limba:</label>
-        <UInput v-model="newRecord.language" id="language" />
-      </div>
-
-      <div class="mb-3">
-        <label for="published">Publicat in anul:</label>
-        <UInput v-model="newRecord.published" type="number" id="published" />
-      </div>
-
-      <div class="mb-3">
-        <label for="sales">Vanzari:</label>
-        <UInput v-model="newRecord.sales" type="number" id="sales" />
-      </div>
-
-      <UButton @click="addNewRecord" label="Adauga Carte"/>
-    </div>
-
-    <UTable :rows="rows" :columns="columns"></UTable>
-
-    <div class="flex justify-end px-3 py-3.5 border-t border-gray-200 dark:border-gray-700">
-      <UPagination v-model="page" :page-count="pageCount" :total="filteredRows.length" />
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import * as Realm from 'realm-web';
@@ -168,3 +123,52 @@ const rows = computed(() => {
   return filteredRows.value.slice(startIndex, endIndex);
 });
 </script>
+
+
+
+
+<template>
+  <div>
+    <div class="flex px-3 py-3.5 border-b border-gray-200 dark:border-gray-700">
+      <UInput v-model="q" placeholder="Filtreaza carti" />
+    </div>
+
+    <!-- Formular pentru introducerea manuală a datelor -->
+    <!-- Formular pentru introducerea manuală a datelor -->
+    <div class="flex px-3 py-3.5 border-b border-gray-200 dark:border-gray-700">
+      <div class="mb-3">
+        <label for="author">Autor:</label>
+        <UInput v-model="newRecord.author" id="author" />
+      </div>
+
+      <div class="mb-3">
+        <label for="book">Titlu carte:</label>
+        <UInput v-model="newRecord.book" id="book" />
+      </div>
+
+      <div class="mb-3">
+        <label for="language">Scris in limba:</label>
+        <UInput v-model="newRecord.language" id="language" />
+      </div>
+
+      <div class="mb-3">
+        <label for="published">Publicat in anul:</label>
+        <UInput v-model="newRecord.published" type="number" id="published" />
+      </div>
+
+      <div class="mb-3">
+        <label for="sales">Vanzari:</label>
+        <UInput v-model="newRecord.sales" type="number" id="sales" />
+      </div>
+
+      <UButton @click="addNewRecord" label="Adauga Carte"/>
+    </div>
+
+    <UTable :rows="rows" :columns="columns"></UTable>
+
+    <div class="flex justify-end px-3 py-3.5 border-t border-gray-200 dark:border-gray-700">
+      <UPagination v-model="page" :page-count="pageCount" :total="filteredRows.length" />
+    </div>
+  </div>
+</template>
+
